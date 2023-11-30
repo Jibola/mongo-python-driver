@@ -66,17 +66,10 @@ tasks:
 
 
 buildvariants:
-- matrix_name: "test-macos"
-  matrix_spec:
-    platform:
-      # MacOS introduced SSL support with MongoDB >= 3.2.
-      # Older server versions (2.6, 3.0) are supported without SSL.
-      - macos-1014
-    auth: "*"
-    ssl: "*"
-  exclude_spec:
-    # No point testing with SSL without auth.
-    - platform: macos-1014
-      auth: "noauth"
-      ssl: "ssl"
-  display_name: "${platform} ${auth} ${ssl}"
+- name: macos-11
+  display_name: OSX
+  modules: ~
+  run_on:
+  - macos-1100
+  tasks:
+  - name: test-semantic-kernel
