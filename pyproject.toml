@@ -18,6 +18,7 @@ keywords = [
     "mongo",
     "mongodb",
     "pymongo",
+    "motor",
 ]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
